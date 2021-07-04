@@ -1,0 +1,33 @@
+{
+  "private": true,
+  "scripts": {
+    "dev": "npm run development",
+    "development": "mix",
+    "watch": "mix watch",
+    "watch-poll": "mix watch -- --watch-options-poll=1000",
+    "hot": "mix watch --hot",
+    "prod": "npm run production",
+    "production": "mix --production",
+    "css-build": "node-sass --omit-source-map-url resources/sass/mystyles.scss public/css/mystyles.css",
+    "css-watch": "npm run css-build -- --watch",
+    "start": "npm run css-watch"
+
+  },
+  "devDependencies": {
+    "axios": "^0.21",
+    "bulma": "^0.9.3",
+    "laravel-mix": "^6.0.6",
+    "lodash": "^4.17.19",
+    "node-sass": "^6.0.1",
+    "postcss": "^8.1.14"
+  },
+  "name": "lagranjita",
+  "description": "<p align=\"center\"><a href=\"https://laravel.com\" target=\"_blank\"><img src=\"https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg\" width=\"400\"></a></p>",
+  "version": "1.0.0",
+  "main": "resources/sass/mystyles.scss",
+  "directories": {
+    "test": "tests"
+  },
+  "author": "heberth-uh, nicolas-hoil, brandon-tzab",
+  "license": "ISC"
+}
