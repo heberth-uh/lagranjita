@@ -19,8 +19,9 @@ class CreateProductosTable extends Migration
             $table->string('etapa');
             $table->string('categoria');
             $table->string('marca');
-            $table->string('precioSaco');
-            $table->string('precioKg');
+            //Se agregó una nueva columna 'peso' en add_peso_to_products.php
+            $table->string('precioSaco'); //Tipo de dato actualizado a decimal
+            $table->string('precioKg'); //Tipo de dato actualizado a decimal
             $table->integer('totalSacos');
             $table->decimal('totalKg', $precision = 8, $scale = 2);
             $table->longText('descripcion');
