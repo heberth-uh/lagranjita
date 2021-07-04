@@ -24,7 +24,7 @@
                 <label class="label">Etapa</label>
                 <div class="control">
                     <div class="select">
-                        <select class="form-control"class="form-control" name="etapa">
+                        <select class="form-control" name="etapa">
                             <option value="iniciación">Iniciación</option>
                             <option value="desarrollo">Desarrollo</option>
                             <option value="finalización">Finalización</option>
@@ -37,7 +37,7 @@
                 <label class="label">Categoría</label>
                 <div class="control">
                     <div class="select" >
-                        <select class="form-control"class="form-control"name="categoria">
+                        <select class="form-control" name="categoria">
                             <option value="pollo">Pollo</option>
                             <option value="cerdo">Cerdo</option>
                             <option value="pavo">Pavo</option>
@@ -52,7 +52,7 @@
                 <label class="label">Marca</label>
                 <div class="control">
                     <div class="select">
-                        <select class="form-control"class="form-control"name="marca">
+                        <select class="form-control" name="marca">
                             <option value="provi">Provi</option>
                             <option value="purina">Purina</option>
                         </select>
@@ -66,7 +66,7 @@
                         <label class="label">Peso del costal</label>
                         <div class="control">
                             <div class="select" >
-                                <select class="form-control"class="form-control"name="peso">
+                                <select class="form-control" name="peso">
                                     <option value="40">40 Kg</option>
                                     <option value="20">20 Kg</option>
                                     <option value="10">10 Kg</option>
@@ -123,7 +123,7 @@
                         <span class="file-cta">
                             <span class="file-icon">
                                 <i class="fas fa-upload"></i>
-                            </span>
+                            </span><
                             <span class="file-label">
                                 Choose a file…
                             </span>
