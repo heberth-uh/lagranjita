@@ -12,9 +12,8 @@
 <body>
     <nav class="navbar" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
-            <a class="navbar-item" href="https://bulma.io">
-                <img src="https://bulma.io/images/bulma-logo.png"
-                    alt="Bulma: Free, open source, and modern CSS framework based on Flexbox" width="112" height="28">
+            <a class="navbar-item" href="{{url('/producto/')}}">
+                <h1 class="title is-4 has-text-link">LaGranjita</h1>
             </a>
 
             <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
