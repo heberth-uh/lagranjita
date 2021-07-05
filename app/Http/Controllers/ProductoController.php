@@ -68,9 +68,10 @@ class ProductoController extends Controller
      * @param  \App\Models\Producto  $producto
      * @return \Illuminate\Http\Response
      */
-    public function edit(Producto $producto)
+    public function edit($id)
     {
-        //
+        $producto = Producto::findOrFail($id);
+        return view('producto.edit', compact('producto'));
     }
 
     /**
@@ -80,9 +81,14 @@ class ProductoController extends Controller
      * @param  \App\Models\Producto  $producto
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Producto $producto)
+    public function update(Request $request, $id)
     {
-        //
+        $datosProducto = request()->except(['_token', '_method']);
+        Producto::where('id','=',$id)->update($datosProducto);
+
+        $producto = Producto::findOrFail($id);
+        return view('producto.show', compact('producto'));
+
     }
 
     /**
@@ -91,8 +97,9 @@ class ProductoController extends Controller
      * @param  \App\Models\Producto  $producto
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Producto $producto)
+    public function destroy($id)
     {
-        //
+        Producto::destroy($id);
+        return redirect('producto');
     }
 }
