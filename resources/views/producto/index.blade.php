@@ -19,7 +19,7 @@
                         <div class="media-content">
                             <p class="title is-5">{{ $producto->nombre }}</p>
                             @if(strlen($producto->decripcion) > 60)
-                                <p class="subtitle is-6">{{ \Illuminate\Support\Str::limit('$producto->descripcion', 20, '...'); }}</p>
+                                <p class="subtitle is-6">{{ Str::limit($producto->descripcion, 20, '...'); }}</p>
                             @else
                                 <p class="subtitle is-6">{{ $producto->descripcion }}</p>
                             @endif
