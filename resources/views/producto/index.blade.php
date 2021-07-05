@@ -26,6 +26,10 @@
                             @else
                                 <p class="subtitle is-6">{{ $producto->descripcion }}</p>
                             @endif
+                        <div class="existencia">
+                            <progress class="progress is-small is-primary" value="{{ $producto->totalSacos * 100 / 20 }}" max="100">20%</progress>
+                            
+                        </div>
                         </div>
                     </div>
 
