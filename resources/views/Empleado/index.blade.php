@@ -55,7 +55,13 @@
                                 <p class="title is-5">{{ $empleado->Telefono }}</p>
                                 <label class="is-size-5">Turno:</label>
                                 <p class="title is-5">{{ $empleado->Turno }}</p>
+                                
                             </div>
+        
+                        </div>
+                        <div class="card-footer has-text-centered">
+                                <button class="button is-warning is-medium is-fullwidth has-text-centered">Editar</a>
+                                <button class="button is-danger is-medium is-fullwidth has-text-centered">Eliminar</a>
                         </div>
                     </div>
                 </div>
