@@ -30,6 +30,10 @@ Route::resource('producto', ProductoController::class);
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [ProductoController::class, 'index'])->name('home');
 //Ruta de empleados
 Route::resource('empleado', EmpleadoController::class);
+
+Route::group(['middleware'=>'auth'], function(){
+    Route::get('/', [ProductoController::class, 'index'])->name('home');
+});
