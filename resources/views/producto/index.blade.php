@@ -1,7 +1,10 @@
 @extends('layouts.productosLayout')
 
 @section('content')
-<h1 class="title is-3">Productos en Stock</h1>
+<div class="encabezado is-flex is-justify-content-space-between">
+    <h1 class="title is-3">Productos en Stock</h1>
+    <a class="button is-primary" href="{{ url('/producto/create') }}">Agregar Producto</a>
+</div>
 <section class="">
     <div class="columns is-multiline m-0 is-2">
 
