@@ -14,7 +14,9 @@ class ProductoController extends Controller
      */
     public function index()
     {
-        return view('producto.index');
+        // $productos['productos']=Producto::all();
+        $productos = Producto::all();
+        return view('producto.index', ['productos'=>$productos]);
     }
 
     /**
@@ -37,6 +39,12 @@ class ProductoController extends Controller
     {
         //$datosProducto = request()->all();
         $datosProducto = request()->except('_token');
+        
+        if ($request->hasFile('imagen')) {
+            $datosProducto['imagen'] = $request->file('imagen')->store('uploads','public');
+        }
+        
+        
         Producto::insert($datosProducto);
         return response()->json($datosProducto);
     }
