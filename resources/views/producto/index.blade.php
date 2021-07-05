@@ -1,5 +1,5 @@
-<!-- @extends('layouts.productosLayout') -->
-@extends('layouts.app')
+@extends('layouts.productosLayout')
+
 
 @section('content')
 <div class="encabezado is-flex is-justify-content-space-between">

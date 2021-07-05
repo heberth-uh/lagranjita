@@ -21,20 +21,11 @@
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>
             </a>
+
         </div>
     </nav>
     <div class="container is-fullhd my-6">
-        <div class="columns">
-            <div class="column is-2">
-            </div>
-
-            <div class="column is-8">
-                @yield('content')
-            </div>
-            
-            <div class="column is-2">
-            </div>
-        </div>
+        @yield('content')
     </div>
 
 </body>
