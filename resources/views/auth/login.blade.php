@@ -1,8 +1,12 @@
 @extends('layouts.productosLayout')
 
 @section('content')
-<section class="hero  is-fullheight">
-<div class="hero-body">
+<!-- <figure class="image is-3by1 ">
+    <img src="/../../../public/login.jpg" alt="imagen de referencia">
+</figure> -->
+
+<section class="hero  is-fullheight has-background-primary">
+    <div class="hero-body">
 <div class="container ">
 <div class="columns is-centered">
 <div class="column is-5-tablet is-4-desktop is-3-widescreen">
@@ -16,7 +20,7 @@
                         @csrf
 
                         <div class="field">
-                            <label for="email" class="label">{{ __('E-Mail Address') }}</label>
+                            <label for="email" class="label">{{ __('Correo') }}</label>
 
                             <div class="control has-icons-left ">
                                 <input id="email" type="email" class="input is-link  @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
@@ -33,7 +37,7 @@
                         </div>
 
                         <div class="field">
-                            <label for="password" class="label">{{ __('Password') }}</label>
+                            <label for="password" class="label">{{ __('Contraseña') }}</label>
 
                             <div class="control control has-icons-left">
                                 <input id="password" type="password" class="input is-link @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
@@ -62,7 +66,7 @@
 
                         <div class="field is-grouped">
                             <div class="control">
-                                <button type="submit" class="button is-link">
+                                <button type="submit" class="button is-primary">
                                     {{ __('Login') }}
                                 </button>
 
