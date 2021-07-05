@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Producto;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class ProductoController extends Controller
 {
@@ -44,9 +45,8 @@ class ProductoController extends Controller
             $datosProducto['imagen'] = $request->file('imagen')->store('uploads','public');
         }
         
-        
         Producto::insert($datosProducto);
-        return response()->json($datosProducto);
+        return redirect('producto')->with('mensaje','Se ha agregado un nuevo producto al inventario');
     }
 
     /**
@@ -84,10 +84,17 @@ class ProductoController extends Controller
     public function update(Request $request, $id)
     {
         $datosProducto = request()->except(['_token', '_method']);
+
+        if ($request->hasFile('imagen')) { //Si existe o se selecciona imagen
+            $producto = Producto::findOrFail($id); //Se obtiene la actual de la BD
+            Storage::delete('public/'.$producto->imagen); //Se elimina
+            $datosProducto['imagen'] = $request->file('imagen')->store('uploads','public'); //Se actualiza la que se seleccionó
+        }
+
         Producto::where('id','=',$id)->update($datosProducto);
 
         $producto = Producto::findOrFail($id);
-        return view('producto.show', compact('producto'));
+        return view('producto.show', compact('producto'))->with('mensaje', 'Se modificaron los datos exitosamente.');
 
     }
 
@@ -99,7 +106,11 @@ class ProductoController extends Controller
      */
     public function destroy($id)
     {
-        Producto::destroy($id);
-        return redirect('producto');
+        $producto = Producto::findOrFail($id);
+        if (Storage::delete('public/'. $producto->imagen)) {
+            Producto::destroy($id);
+        }
+
+        return redirect('producto')->with('mensaje','Se ha eliminado un producto del inventario');
     }
 }
