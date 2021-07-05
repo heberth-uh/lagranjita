@@ -34,11 +34,43 @@
                     </div>
 
                     <div class="content">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Phasellus nec iaculis mauris. <a>@bulmaio</a>.
-                        <a href="#">#css</a> <a href="#">#responsive</a>
-                        <br>
-                        <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+                        <div class="columns is-1">
+                            <div class="column is-half">
+
+                                <div class="columns is-multiline is-gapless">
+                                    <div class="column is-full">
+                                        <p class="is-subtitle is-5">Saco</p>
+                                    </div>
+                                    <div class="column is-full">
+                                        <p class="is-subtitle has-text-primary is-5">${{ $producto->precioSaco }}</p>
+                                    </div>
+                                    <div class="column is-three-quarters mt-2">
+                                        <input class="input is-primary" type="text" placeholder="Cantidad">
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="column is-half">
+                            
+                                <div class="columns is-multiline is-gapless">
+                                    <div class="column is-full">
+                                        <p class="is-subtitle is-5">Kilogramo</p>
+                                    </div>
+                                    <div class="column">
+                                        <p class="is-subtitle has-text-primary is-5">${{ $producto->precioKg }}</p>
+                                    </div>
+                                    <div class="column is-three-quarters mt-2">
+                                        <input class="input is-primary" type="text" placeholder="Cantidad">
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+ 
+                    </div>
+
+                    <div class="card-footer has-text-centered">
+                        <button class="button is-primary is-medium is-fullwidth has-text-centered">Vender</a>
                     </div>
                 </div>
             </div>
