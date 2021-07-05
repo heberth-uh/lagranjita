@@ -23,13 +23,13 @@ Formulario de creacion un nuevo empleafo
             <div class="field">
                 <label class="label">Apellido Paterno:</label>
                 <div class="control">
-                    <input class="input" type="text" placeholder="Ingrese los Apellido Paterno del empleado" name="ApellidoPaterno">
+                    <input class="input" type="text" placeholder="Ingrese los Apellido Paterno del empleado" name="apellidoPaterno">
                 </div>
             </div>
             <div class="field">
                 <label class="label">Apellido Materno:</label>
                 <div class="control">
-                    <input class="input" type="text" placeholder="Ingrese los Apellido Materno del empleado" name="ApellidoMaterno">
+                    <input class="input" type="text" placeholder="Ingrese los Apellido Materno del empleado" name="apellidoMaterno">
                 </div>
             </div>
             <div class="field">
@@ -83,5 +83,4 @@ Formulario de creacion un nuevo empleafo
         </form>
     </div>
 </body>
-
 </html>
