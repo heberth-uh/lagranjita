@@ -86,11 +86,11 @@
                     Menú
                 </p>
                 <ul class="menu-list ">
-                    <li><a>Inicio</a></li>
-                    <li><a>Corte de caja</a></li>
+                    <li><a href="{{ url('/home') }}">Inicio</a></li>
+                    <li class=""><a>Corte de caja</a></li>
                     <li><a>Registro de ventas</a></li>
-                    <li><a>Gestionar inventario</a></li>
-                    <li><a>Gestionar empleados</a></li>
+                    <li><a href=" {{ url('/inventario') }} ">Gestionar inventario</a></li>
+                    <li><a hfer=" {{ url('/empleado') }} ">Gestionar empleados</a></li>
                     
                 </ul>
             </aside>
