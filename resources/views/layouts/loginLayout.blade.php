@@ -11,16 +11,10 @@
 
 <body>
     <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
-        <div class="container is-fullhd">
+        <div class="container is-fullwidth">
             <div class="navbar-brand">
                 <a class="navbar-item" href="{{url('/producto/')}}">
                     <h1 class="title is-4 has-text-primary">LaGranjita</h1>
-                </a>
-
-                <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
-                    <span aria-hidden="true"></span>
-                    <span aria-hidden="true"></span>
-                    <span aria-hidden="true"></span>
                 </a>
             </div>
 
@@ -31,13 +25,13 @@
                     <!-- Authentication Links -->
                     @guest
                     @if (Route::has('login'))
-                    <a class="navbar-item" href="{{ route('login') }}">
+                    <a class="navbar-item is-hidden" href="{{ route('login') }}">
                         {{ __('Login') }}
                     </a>
                     @endif
 
                     @if (Route::has('register'))
-                    <a class="navbar-item" href="{{ route('register') }}">
+                    <a class="navbar-item is-hidden" href="{{ route('register') }}">
                         {{ __('Register') }}
                     </a>
                     @endif
@@ -57,26 +51,20 @@
                             </form>
                         </div>
                     </div>
-
                     @endguest
                 </div>
 
             </div>
         </div>
     </nav>
-    <div class="container is-fullhd my-6">
-        <div class="columns">
-            <div class="column is-2-desktop is-hidden-tablet-only">
-            </div>
 
-            <div class="column is-8-desktop is-9-tablet mx-2">
+    <section class="contenido-login" id="contenido_login">
+        <div class="columns">
+            <div class="column">
                 @yield('content')
             </div>
-
-            <div class="column is-2-desktop">
-            </div>
         </div>
-    </div>
+    </section>
 
 </body>
 

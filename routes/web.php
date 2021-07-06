@@ -26,14 +26,14 @@ Route::get('/', function () {
 
 //Route::get('/productos/create', [ProductoController::class, 'create']);
 
-Route::resource('producto', ProductoController::class);
+Route::resource('producto', ProductoController::class)->middleware(['auth']);
 
 Auth::routes();
 
 Route::get('/home', [ProductoController::class, 'index'])->name('home');
 //Ruta de empleados
-Route::resource('empleado', EmpleadoController::class);
+Route::resource('empleado', EmpleadoController::class)->middleware(['auth']);
 
 Route::group(['middleware'=>'auth'], function(){
-    Route::get('/', [ProductoController::class, 'index'])->name('home');
+    Route::get('/', [ProductoController::class, 'index'])->name('home')->middleware(['auth']);
 });
