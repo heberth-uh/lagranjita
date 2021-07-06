@@ -1,4 +1,3 @@
-Formulario de creacion un nuevo empleafo
 <!DOCTYPE html>
 <html lang="en">
 
