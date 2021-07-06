@@ -79,7 +79,21 @@
     </nav>
     <div class="container is-fullhd my-6">
         <div class="columns">
-            <div class="column is-2-desktop is-hidden-tablet-only">
+            <div class="column is-2-desktop is-hidden-tablet-only has-background-white ">
+
+            <aside class="menu ">
+                <p class="menu-label">
+                    Menú
+                </p>
+                <ul class="menu-list ">
+                    <li><a>Inicio</a></li>
+                    <li><a>Corte de caja</a></li>
+                    <li><a>Registro de ventas</a></li>
+                    <li><a>Gestionar inventario</a></li>
+                    <li><a>Gestionar empleados</a></li>
+                    
+                </ul>
+            </aside>
             </div>
 
             <div class="column is-8-desktop is-9-tablet mx-2">
