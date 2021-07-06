@@ -1,6 +1,16 @@
+<<<<<<< HEAD
 @extends('layouts.loginLayout')
+=======
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Granjita</title>
+    <link rel="stylesheet" href="../../css/mystyles.css">
+>>>>>>> 810b932bb4fa57a9e27231af97e57becc156e449
 
-@section('content')
+
+</head>
 <!-- <figure class="image is-3by1 ">
     <img src="/../../../public/login.jpg" alt="imagen de referencia">
 </figure> -->
@@ -94,4 +104,8 @@
         </div>
     </div>
 </section>
+<<<<<<< HEAD
 @endsection
+=======
+
+>>>>>>> 810b932bb4fa57a9e27231af97e57becc156e449

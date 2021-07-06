@@ -1,4 +1,3 @@
-Formulario de creacion un nuevo empleafo
 <!DOCTYPE html>
 <html lang="en">
 
@@ -59,7 +58,7 @@ Formulario de creacion un nuevo empleafo
                 <label class="label">Foto del Empleado (opcional)</label>
                 <div class="file has-name">
                     <label class="file-label">
-                        <input class="file-input" type="file" name="foto">
+                        <input class="file-input" type="file" name="Imagen">
                         <span class="file-cta">
                             <span class="file-icon">
                                 <i class="fas fa-upload"></i>
