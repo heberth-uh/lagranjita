@@ -4,10 +4,10 @@
 @section('content')
 <div class="container">
     <h1 class="title has-text-info">Detalles del producto {{ $producto->nombre}}</h1>
-    @if (Session::has('mensaje'))
+    @if (isset($mensaje))
         <div class="notification is-info is-light">
             <button class="delete"></button>
-            {{ Session::get('mensaje') }}
+            {{ $mensaje }}
         </div>
     @endif
     <div class="box">

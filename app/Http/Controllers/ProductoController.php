@@ -94,8 +94,7 @@ class ProductoController extends Controller
         Producto::where('id','=',$id)->update($datosProducto);
 
         $producto = Producto::findOrFail($id);
-        return view('producto.show', compact('producto'))->with('mensaje', 'Se modificaron los datos exitosamente.');
-
+        return view('producto.show', compact('producto'), ['mensaje'=>'Se modificaron los datos exitosamente']);
     }
 
     /**
