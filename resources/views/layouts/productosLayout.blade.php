@@ -7,6 +7,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>La Granjita</title>
     <link rel="stylesheet" href="../../css/mystyles.css">
+    <script>
+    
+        document.addEventListener('DOMContentLoaded', () => {
+        (document.querySelectorAll('.notification .delete') || []).forEach(($delete) => {
+            const $notification = $delete.parentNode;
+
+            $delete.addEventListener('click', () => {
+            $notification.parentNode.removeChild($notification);
+            });
+        });
+        });
+
+    </script>
 </head>
 
 <body>
