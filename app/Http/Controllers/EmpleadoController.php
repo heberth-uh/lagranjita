@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Empleado;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class EmpleadoController extends Controller
 {
@@ -72,10 +73,10 @@ class EmpleadoController extends Controller
      * @param  \App\Models\Empleado  $empleado
      * @return \Illuminate\Http\Response
      */
-    public function edit(Empleado $empleado)
+    public function edit($id)
     {
         //
-        $empleado = Producto::findOrFail($id);
+        $empleado = Empleado::findOrFail($id);
         return view('empleado.edit', compact('empleado'));
     }
 
@@ -86,9 +87,18 @@ class EmpleadoController extends Controller
      * @param  \App\Models\Empleado  $empleado
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Empleado $empleado)
+    public function update(Request $request, $id)
     {
         //
+        $datosEmpleado= request()->except(['_token', '_method']);
+        if ($request->hasFile('Imagen')) { //Si existe o se selecciona imagen
+            $empleado = Empleado::findOrFail($id); //Se obtiene la actual de la BD
+            Storage::delete('public/'.$empleado->Imagen); //Se elimina
+            $datosEmpleado['Imagen'] = $request->file('Imagen')->store('uploads','public'); //Se actualiza la que se seleccionó
+        }
+        Empleado::where('id','=',$id)->update($datosEmpleado);
+        $empleado= Empleado::findOrFail($id);
+        return view('empleado.edit', compact('empleado'), ['mensaje'=>'Se modificaron los datos exitosamente']);
     }
 
     /**
@@ -101,7 +111,7 @@ class EmpleadoController extends Controller
     {
         //
         Empleado::destroy($id);
-        return redirect('empleado');
+        return redirect('empleado')->with('mensaje','Se ha eliminado un producto del inventario');
 
     }
 }
