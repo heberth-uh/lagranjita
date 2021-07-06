@@ -4,7 +4,7 @@
 @section('content')
 <div class="encabezado is-flex is-justify-content-space-between">
     <h1 class="title has-text-info">Productos en Stock</h1>
-    <a class="button is-primary" href="{{ url('/producto/create') }}">Agregar Producto</a>
+    <!-- <a class="button is-primary" href="{{ url('/producto/create') }}">Agregar Producto</a> -->
 </div>
 
 @if(Session::has('mensaje'))
