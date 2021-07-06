@@ -1,5 +1,11 @@
 @extends('layouts.productosLayout')
 @section('content')
+    @if(Session::has('mensaje'))
+    <div class="notification is-info">
+        <button class="delete"></button>
+            {{ Session::get('mensaje')}}
+    </div>
+    @endif
     <div class="container is-fullhd my-6">
         <div class="encabezado is-flex is-justify-content-space-between">
             <h1 class="title has-text-info">Empleados</h1>
@@ -7,13 +13,13 @@
         </div>
         <div class="columns is-multiline m-0 is-2">
 
-                @foreach ( $empleados as $empleado )
+                @foreach ( $empleados as $empleado)
                 <div class="column is-4-desktop is-6-tablet">
 
                     <div class="card is-flex is-flex-direction-column">
                         <div class="card-image">
                             <figure class="image is-128x128">
-                                <img  class="is-rounded" src="{{asset('storage').'/'. $empleado->Imagen}}" alt="Ilustración del empleado"> -->
+                                <img  class="is-rounded" src="{{asset('storage').'/'. $empleado->Imagen}}" alt="Ilustración del empleado">                             </figure>
                             </figure>
                         </div>
                         <div class="card-content">
@@ -36,12 +42,12 @@
             
                             </div>
                             <div class="card-footer has-text-centered">
-                                <button class="button is-warning  has-text-centered">Editar</a>
-                                
+                                <a class="button is-warning" href="{{ url('empleado/'. $empleado->id.'/edit')}}">Editar</a>
                                 <form action="{{url('/empleado/'.$empleado->id)}}" method="post">
                                     @csrf
                                     {{method_field('DELETE')}}
-                                    <button class="button is-danger has-text-centered" onclick ="return confirm('¿Quieres borrar al empleado)">Eliminar</a>
+                                    <input type="submit" class="button is-danger"
+                                    onclick="return confirm('¿Realmente desea borrar este producto?')" value="Eliminar">
                                 </form> 
                             </div>
                         </div>

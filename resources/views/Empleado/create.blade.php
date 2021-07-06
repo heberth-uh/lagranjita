@@ -62,7 +62,7 @@
                         </label>
                     </div>
                 </div>
-
+                
                 <div class="field is-grouped">
                     <div class="control">
                         <button class="button is-link">Guardar</button>
