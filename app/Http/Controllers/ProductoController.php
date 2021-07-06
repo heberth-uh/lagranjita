@@ -19,6 +19,13 @@ class ProductoController extends Controller
         $productos = Producto::all();
         return view('producto.index', ['productos'=>$productos]);
     }
+    //borrar
+      public function inventario()
+    {
+        // $productos['productos']=Producto::all();
+        $productos = Producto::all();
+        return view('inventario.index', ['productos'=>$productos]);
+    }
 
     /**
      * Show the form for creating a new resource.

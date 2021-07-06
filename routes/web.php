@@ -31,6 +31,8 @@ Route::resource('producto', ProductoController::class)->middleware(['auth']);
 Auth::routes();
 
 Route::get('/home', [ProductoController::class, 'index'])->name('home');
+//borrar si no funciona :v
+Route::get('/inventario', [ProductoController::class, 'inventario'])->name('inventario')->middleware(['auth']);
 //Ruta de empleados
 Route::resource('empleado', EmpleadoController::class)->middleware(['auth']);
 
