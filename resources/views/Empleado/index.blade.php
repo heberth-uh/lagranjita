@@ -1,32 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>La Granjita</title>
-    <link rel="stylesheet" href="../../css/mystyles.css">
-</head>
-
-<body>
-    <nav class="navbar" role="navigation" aria-label="main navigation">
-        <div class="navbar-brand">
-            <a class="navbar-item" href="https://bulma.io">
-                <img src="https://bulma.io/images/bulma-logo.png"
-                    alt="Bulma: Free, open source, and modern CSS framework based on Flexbox" width="112" height="28">
-            </a>
-
-            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-            </a>
-        </div>
-    </nav>
+@extends('layouts.productosLayout')
+@section('content')
     <div class="container is-fullhd my-6">
         <div class="encabezado is-flex is-justify-content-space-between">
-            <h1 class="title is-3">Empleados</h1>
+            <h1 class="title has-text-info">Empleados</h1>
             <a class="button is-primary" href="{{ url('/empleado/create') }}">Agregar Empleado</a>
         </div>
         <div class="columns is-multiline m-0 is-2">
@@ -74,6 +50,5 @@
                 @endforeach
             </div>
         </div>
-    </body>
-</html>
-
+    </div>
+@endsection

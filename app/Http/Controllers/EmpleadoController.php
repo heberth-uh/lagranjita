@@ -75,6 +75,8 @@ class EmpleadoController extends Controller
     public function edit(Empleado $empleado)
     {
         //
+        $empleado = Producto::findOrFail($id);
+        return view('empleado.edit', compact('empleado'));
     }
 
     /**
