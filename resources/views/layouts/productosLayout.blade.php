@@ -82,15 +82,16 @@
             <div class="column is-2-desktop is-hidden-tablet-only has-background-white ">
 
             <aside class="menu ">
-                <p class="menu-label">
+                <p class="menu-label has-text-primary">
                     Menú
                 </p>
-                <ul class="menu-list ">
-                    <li><a href="{{ url('/home') }}">Inicio</a></li>
-                    <li class=""><a>Corte de caja</a></li>
-                    <li><a>Registro de ventas</a></li>
-                    <li><a href=" {{ url('/inventario') }} ">Gestionar inventario</a></li>
-                    <li><a hfer=" {{ url('/empleado') }} ">Gestionar empleados</a></li>
+                <ul class="menu-list">
+                    <li><a class="has-text-primary" href="{{ url('/home') }}">Inicio</a></li>
+                    <li><a class="has-text-primary">Corte de caja</a></li>
+                    <hr class="has-background-primary">
+                    <li><a class="has-text-primary" >Registro de ventas</a></li>
+                    <li><a class="has-text-primary" href=" {{ url('/inventario') }} ">Gestionar inventario</a></li>
+                    <li><a class="has-text-primary" href=" {{ url('/empleado') }} ">Gestionar empleados</a></li>
                     
                 </ul>
             </aside>
