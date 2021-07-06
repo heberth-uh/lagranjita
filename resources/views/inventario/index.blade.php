@@ -44,7 +44,22 @@
                         <th>{{ $producto->totalSacos }}</th> 
                         <th>{{ $producto->totalSacos }}</th>
                         <th>{{ $producto->totalSacos }}</th>
-                        <th>Editar | Borrar</th>    
+                        <th>
+                        <div class="buttons ">
+                <div class="buttons is-flex is-justify-content-end is-justify-content-right">
+                    
+                    <a class="button is-warning" href="{{ url('producto/'. $producto->id. '/edit') }}">Editar</a>
+
+                    <form action="{{ url('/producto/'. $producto->id) }}" method="post">
+                        @csrf
+                        {{ method_field('DELETE') }}
+                        <input type="submit" class="button is-danger"
+                            onclick="return confirm('¿Realmente desea borrar este producto?')" value="Eliminar">
+            </form>
+
+        </div>
+    </div>
+                        </th>    
                     
                     
                     </tr>
