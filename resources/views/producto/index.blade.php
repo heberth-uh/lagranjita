@@ -8,7 +8,7 @@
 </div>
 
 @if(Session::has('mensaje'))
-    <div class="notification is-info is-light">
+    <div class="notification is-info">
         <button class="delete"></button>
             {{ Session::get('mensaje')}}
     </div>
