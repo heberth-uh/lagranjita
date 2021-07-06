@@ -25,7 +25,17 @@
         </div>
     </nav>
     <div class="container is-fullhd my-6">
-        @yield('content')
+        <div class="columns">
+            <div class="column is-2-desktop">
+            </div>
+            
+            <div class="column is-8-desktop">
+                @yield('content')
+            </div>
+            
+            <div class="column is-2-desktop">
+            </div>
+        </div>
     </div>
 
 </body>
