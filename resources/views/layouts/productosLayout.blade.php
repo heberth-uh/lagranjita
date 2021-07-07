@@ -127,7 +127,15 @@
             </div>
         </div>
     </div>
-
+    <footer class="footer has-background-grey-light">
+        <div class="content has-text-centered">
+            <p>
+                <strong ><a class="has-text-dark" href="https://github.com/heberth-uh/lagranjita" target="_blank">La Granjita</a></strong> by <br>
+                <a target="_blank" href="https://github.com/heberth-uh" class="has-text-info">Heberth Uh</a> | <a target="_blank" href="https://github.com/Nicolas-Lalo" class="has-text-info">Nicolás Hoil</a> | <a target="_blank" href="https://github.com/Brandon-Tzab" class="has-text-info">Brandon Tzab</a> <br>
+                Julio 2021 &copy; Programación Web <a href="http://www.itsmotul.edu.mx/" target="_blank" class="has-text-dark">TECNM Campus Motul</a>
+            </p>
+        </div>
+    </footer>
 </body>
 
 </html>
