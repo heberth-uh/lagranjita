@@ -1,7 +1,7 @@
 @extends('layouts.productosLayout')
 @section('content')
 
-    <div class="container is-fullhd my-6">
+    <div class="container is-fullhd mb-6">
         <div class="encabezado is-flex is-justify-content-space-between">
             <h1 class="title has-text-info">Empleados</h1>
             <a class="button is-info is-outlined " href="{{ url('/empleado/create') }}">Agregar Empleado</a>

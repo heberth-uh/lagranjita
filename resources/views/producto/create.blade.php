@@ -3,8 +3,8 @@
 @section('content')
 <div class="container m-3">
     <h1 class="title has-text-info">Agregar un nuevo producto</h1>
-    <div class="box">
-        <form action="{{ url('/producto') }}" method="post" enctype="multipart/form-data">
+    <form action="{{ url('/producto') }}" method="post" enctype="multipart/form-data">
+        <div class="box">
             @csrf
 
             <div class="field">
@@ -132,17 +132,17 @@
                     </label>
                 </div>
             </div>
+        </div>
 
-            <div class="field is-grouped">
-                <div class="control">
-                    <button class="button is-info">Guardar</button>
-                </div>
+            <div class="field is-grouped is-flex is-justify-content-flex-end">
                 <div class="control">
                     <a href="{{ url('/inventario') }}" class="button is-link is-info is-outlined">Cancelar</a>
                 </div>
+                <div class="control">
+                    <button class="button is-info">Guardar</button>
+                </div>
             </div>
-        </form>
-    </div>
+    </form>
 
 </div>
 @endsection
