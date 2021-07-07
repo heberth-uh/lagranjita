@@ -13,6 +13,9 @@ $verde:#00c47f;
 $azul:#00A5C4;
 $rojo:#EC1F49;
 $naranja:#FF8921;
+$gris1: #eeeeee;
+
+
 
 // Update Bulma's global variables
 $family-sans-serif: "Nunito", sans-serif;
@@ -22,11 +25,17 @@ $primary: $verde;
 $link: $pink;
 $widescreen-enabled: true;
 $fullhd-enabled: true;
+$warning:$naranja;
+$danger:$rojo;
+$info:$azul;
+
 
 // Update some of Bulma's component variables
-$body-background-color: $beige-lighter;
+$body-background-color:$gris1;
 $control-border-width: 2px;
 $input-shadow: none;
+$input-border-color:$primary;
+$input-background-color:$gris1;
 
 // Import only what you need from Bulma
 @import "../../node_modules/bulma/sass/base/_all.sass";
