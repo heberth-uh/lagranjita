@@ -3,8 +3,8 @@
 @section('content')
 <div class="contianer">
     <h1 class="title has-text-info">Editar "{{ $producto->nombre}}"</h1>
-    <div class="box">
-        <form action="{{ url('/producto/' .$producto->id ) }}" method="post" enctype="multipart/form-data">
+    <form action="{{ url('/producto/' .$producto->id ) }}" method="post" enctype="multipart/form-data">
+        <div class="box">
             @csrf
             {{ method_field('PATCH') }}
             <div class="field">
@@ -15,54 +15,68 @@
                 </div>
             </div>
 
-            <div class="field">
-                <label class="label">Etapa</label>
-                <div class="control">
-                    <div class="select">
-                        <select class="form-control" name="etapa">
-                            <option value="iniciación" {{ $producto->etapa == "iniciación" ? "selected" : "" }}>
-                                Iniciación</option>
-                            <option value="desarrollo" {{ $producto->etapa == "desarrollo" ? "selected" : "" }}>
-                                Desarrollo</option>
-                            <option value="finalización" {{ $producto->etapa == "finalización" ? "selected" : "" }}>
-                                Finalización
-                            </option>
-                        </select>
+            <div class="columns">
+                <div class="column is-half">
+                    <div class="field">
+                        <label class="label">Etapa</label>
+                        <div class="control">
+                            <div class="select">
+                                <select class="form-control" name="etapa">
+                                    <option value="iniciación" {{ $producto->etapa == "iniciación" ? "selected" : "" }}>
+                                        Iniciación</option>
+                                    <option value="desarrollo" {{ $producto->etapa == "desarrollo" ? "selected" : "" }}>
+                                        Desarrollo</option>
+                                    <option value="finalización"
+                                        {{ $producto->etapa == "finalización" ? "selected" : "" }}>
+                                        Finalización
+                                    </option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-half">
+                    <div class="field">
+                        <label class="label">Categoría</label>
+                        <div class="control">
+                            <div class="select">
+                                <select class="form-control" name="categoria">
+                                    <option value="pollo" {{ $producto->categoria == "pollo" ? "selected" : "" }}>Pollo
+                                    </option>
+                                    <option value="cerdo" {{ $producto->categoria == "cerdo" ? "selected" : "" }}>Cerdo
+                                    </option>
+                                    <option value="pavo" {{ $producto->categoria == "pavo" ? "selected" : "" }}>Pavo
+                                    </option>
+                                    <option value="rumiantes"
+                                        {{ $producto->categoria == "rumiantes" ? "selected" : "" }}>
+                                        Ruminates</option>
+                                    <option value="cereales y maíz"
+                                        {{ $producto->categoria == "cereales y maíz" ? "selected" : "" }}>
+                                        Celeares y maíz</option>
+                                </select>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <div class="field">
-                <label class="label">Categoría</label>
-                <div class="control">
-                    <div class="select">
-                        <select class="form-control" name="categoria">
-                            <option value="pollo" {{ $producto->categoria == "pollo" ? "selected" : "" }}>Pollo</option>
-                            <option value="cerdo" {{ $producto->categoria == "cerdo" ? "selected" : "" }}>Cerdo</option>
-                            <option value="pavo" {{ $producto->categoria == "pavo" ? "selected" : "" }}>Pavo</option>
-                            <option value="rumiantes" {{ $producto->categoria == "rumiantes" ? "selected" : "" }}>
-                                Ruminates</option>
-                            <option value="cereales y maíz"
-                                {{ $producto->categoria == "cereales y maíz" ? "selected" : "" }}>
-                                Celeares y maíz</option>
-                        </select>
-                    </div>
-                </div>
-            </div>
-
-            <div class="field">
-                <label class="label">Marca</label>
-                <div class="control">
-                    <div class="select">
-                        <select class="form-control" name="marca">
-                            <option value="provi" {{ $producto->marca == "provi" ? "selected" : "" }}>Provi</option>
-                            <option value="purina" {{ $producto->marca == "purina" ? "selected" : "" }}>Purina</option>
-                        </select>
-                    </div>
-                </div>
-            </div>
 
             <div class="columns">
+                <div class="column is-half">
+                    <div class="field">
+                        <label class="label">Marca</label>
+                        <div class="control">
+                            <div class="select">
+                                <select class="form-control" name="marca">
+                                    <option value="provi" {{ $producto->marca == "provi" ? "selected" : "" }}>Provi
+                                    </option>
+                                    <option value="purina" {{ $producto->marca == "purina" ? "selected" : "" }}>Purina
+                                    </option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="column is-half">
                     <div class="field">
                         <label class="label">Peso del costal</label>
@@ -78,6 +92,9 @@
                         </div>
                     </div>
                 </div>
+            </div>
+
+            <div class="columns">
                 <div class="column is-half">
                     <div class="field">
                         <label class="label">Precio (costal)</label>
@@ -87,31 +104,42 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="column">
+                    <div class="field">
+                        <label class="label">Precio (Kg)</label>
+                        <div class="control">
+                            <input class="input" type="number" value="{{ $producto->precioKg }}"
+                                placeholder="Precio por Kg" name="precioKg">
+                        </div>
+                    </div>
+                </div>
+
             </div>
 
-            <div class="field">
-                <label class="label">Precio (Kg)</label>
-                <div class="control">
-                    <input class="input" type="number" value="{{ $producto->precioKg }}" placeholder="Precio por Kg"
-                        name="precioKg">
+            <div class="columns">
+                <div class="column is-half">
+                    <div class="field">
+                        <label class="label">Cantidad (sacos)</label>
+                        <div class="control">
+                            <input class="input" type="number" value="{{ $producto->totalSacos }}"
+                                placeholder="Cantidad de sacos" name="totalSacos">
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="field">
+                        <label class="label">Cantidad (Kg)</label>
+                        <div class="control">
+                            <input class="input" type="number" value="{{ $producto->totalKg }}"
+                                placeholder="Cantidad en Kg" name="totalKg">
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <div class="field">
-                <label class="label">Cantidad (sacos)</label>
-                <div class="control">
-                    <input class="input" type="number" value="{{ $producto->totalSacos }}"
-                        placeholder="Cantidad de sacos" name="totalSacos">
-                </div>
-            </div>
 
-            <div class="field">
-                <label class="label">Cantidad (Kg)</label>
-                <div class="control">
-                    <input class="input" type="number" value="{{ $producto->totalKg }}" placeholder="Cantidad en Kg"
-                        name="totalKg">
-                </div>
-            </div>
+
 
             <div class="field">
                 <label class="label">Descripción</label>
@@ -144,15 +172,16 @@
                 </div>
             </div>
 
-            <div class="field is-grouped">
-                <div class="control">
-                    <button class="button is-link">Guardar</button>
-                </div>
-                <div class="control">
-                    <a href="{{ url('/inventario') }}" class="button is-link is-light">Cancelar</a>
-                </div>
+        </div>
+        <div class="field is-grouped is-flex is-justify-content-flex-end">
+            <div class="control">
+                <a href="{{ url('/inventario') }}" class="button is-info is-outlined mr-2">Cancelar</a>
             </div>
-        </form>
-    </div>
+
+            <div class="control">
+                <button class="button is-info">Guardar</button>
+            </div>
+        </div>
+    </form>
 </div>
 @endsection

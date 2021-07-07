@@ -135,10 +135,10 @@
 
             <div class="field is-grouped">
                 <div class="control">
-                    <button class="button is-link">Guardar</button>
+                    <button class="button is-info">Guardar</button>
                 </div>
                 <div class="control">
-                    <button class="button is-link is-light">Cancelar</button>
+                    <a href="{{ url('/inventario') }}" class="button is-link is-info is-outlined">Cancelar</a>
                 </div>
             </div>
         </form>

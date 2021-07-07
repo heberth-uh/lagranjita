@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="has-navbar-fixed-top">
+<html lang="en" class="645has-navbar-fixed-top">
 
 <head>
     <meta charset="UTF-8">
@@ -7,10 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>La Granjita</title>
     <link rel="stylesheet" href="../../css/mystyles.css">
+    <script src="https://kit.fontawesome.com/3176d7a66a.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-    <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation" style="box-shadow: 0 10px grey;">
+    <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation" style="box-shadow: 0 1px 4px #ccc;">
         <div class="container is-fullwidth">
             <div class="navbar-brand">
                 <a class="navbar-item" href="{{url('/producto/')}}">
@@ -59,10 +60,8 @@
     </nav>
 
     <section class="contenido-login" id="contenido_login">
-        <div class="columns">
-            <div class="column">
-                @yield('content')
-            </div>
+        <div class="">
+            @yield('content')
         </div>
     </section>
 

@@ -7,18 +7,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>La Granjita</title>
     <link rel="stylesheet" href="../../css/mystyles.css">
+    <script src="https://kit.fontawesome.com/3176d7a66a.js" crossorigin="anonymous"></script>
     <script>
-    
-        document.addEventListener('DOMContentLoaded', () => {
+    document.addEventListener('DOMContentLoaded', () => {
         (document.querySelectorAll('.notification .delete') || []).forEach(($delete) => {
             const $notification = $delete.parentNode;
 
             $delete.addEventListener('click', () => {
-            $notification.parentNode.removeChild($notification);
+                $notification.parentNode.removeChild($notification);
             });
         });
-        });
-
+    });
     </script>
 </head>
 
@@ -57,6 +56,10 @@
                     @else
                     <div class="navbar-item has-dropdown is-hoverable">
                         <a class="navbar-link">
+                            <span class="icon has-text-info mr-1">
+                                <i class="fas fa-user-circle"></i>
+                            </span>
+
                             {{ Auth::user()->name }}
                         </a>
 
@@ -77,26 +80,43 @@
             </div>
         </div>
     </nav>
-    
+
 
     <div class="container is-fullhd my-6">
         <div class="columns">
             <div class="column is-2-desktop is-hidden-tablet-only has-background-white ">
 
-            <aside class="menu ">
-                <p class="menu-label has-text-primary">
-                    Menú
-                </p>
-                <ul class="menu-list">
-                    <li><a class="has-text-primary" href="{{ url('/home') }}">Inicio</a></li>
-                    <li><a class="has-text-primary">Corte de caja</a></li>
-                    <hr class="has-background-primary">
-                    <li><a class="has-text-primary" >Registro de ventas</a></li>
-                    <li><a class="has-text-primary" href=" {{ url('/inventario') }} ">Gestionar inventario</a></li>
-                    <li><a class="has-text-primary" href=" {{ url('/empleado') }} ">Gestionar empleados</a></li>
-                    
-                </ul>
-            </aside>
+                <aside class="menu ">
+                    <p class="menu-label has-text-primary">
+                        Menú
+                    </p>
+                    <ul class="menu-list">
+                        <li><a class="has-text-primary" href="{{ url('/home') }}">
+                                <span class="icon has-text-primary">
+                                    <i class="fas fa-home"></i>
+                                </span>Inicio</a></li>
+                        <li><a class="has-text-primary">
+                                <span class="icon has-text-primary">
+                                    <i class="fas fa-cash-register"></i>
+                                </span>Corte de caja</a></li>
+                        <div class="px-4 my-0">
+                            <hr class="has-background-primary">
+                        </div>
+                        <li><a class="has-text-primary">
+                                <span class="icon has-text-primary">
+                                    <i class="fas fa-shopping-cart"></i>
+                                </span>Registro de ventas</a></li>
+                        <li><a class="has-text-primary" href=" {{ url('/inventario') }} ">
+                                <span class="icon has-text-primary">
+                                    <i class="fas fa-list-alt"></i>
+                                </span>Gestionar inventario</a></li>
+                        <li><a class="has-text-primary" href=" {{ url('/empleado') }} ">
+                                <span class="icon has-text-primary">
+                                    <i class="fas fa-user-cog"></i>
+                                </span>Gestionar empleados</a></li>
+
+                    </ul>
+                </aside>
             </div>
 
             <div class="column is-8-desktop is-9-tablet mx-2">

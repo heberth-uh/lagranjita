@@ -3,8 +3,10 @@
 
 </head>
 <!-- <figure class="image is-3by1 ">
-    <img src="/../../../public/login.jpg" alt="imagen de referencia">
+    <img src="{{asset('assets/images/image.png')}}">
 </figure> -->
+
+
 @section('content')
 <section class="hero is-fullheight has-background-primary">
     <div class="hero-body">
@@ -58,30 +60,13 @@
                                     </div>
                                 </div>
 
-                                <div class="field">
-                                    <div class="control">
-                                        <div class="checkbox">
-                                            <input class="form-check-input" type="checkbox" name="remember"
-                                                id="remember" {{ old('remember') ? 'checked' : '' }}>
-
-                                            <label class="form-check-label" for="remember">
-                                                {{ __('Remember Me') }}
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="field is-grouped">
+                                <div class="field is-grouped is-flex is-justify-content-center">
                                     <div class="control">
                                         <button type="submit" class="button is-primary">
                                             {{ __('Login') }}
                                         </button>
 
-                                        @if (Route::has('password.request'))
-                                        <a class="btn btn-link" href="{{ route('password.request') }}">
-                                            {{ __('Forgot Your Password?') }}
-                                        </a>
-                                        @endif
+  
                                     </div>
                                 </div>
 
