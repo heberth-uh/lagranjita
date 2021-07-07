@@ -149,7 +149,7 @@
                     <button class="button is-link">Guardar</button>
                 </div>
                 <div class="control">
-                    <button class="button is-link is-light">Cancelar</button>
+                    <a href="{{ url('/inventario') }}" class="button is-link is-light">Cancelar</a>
                 </div>
             </div>
         </form>

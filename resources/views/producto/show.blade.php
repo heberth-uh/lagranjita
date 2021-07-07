@@ -63,7 +63,7 @@
 
     <div class="buttons ">
         <div class="buttons is-flex is-justify-content-end is-justify-content-right">
-            <a class="button is-primary is-outlined" href="{{ URL::previous() }}">Cancelar</a>
+            <a class="button is-primary is-outlined" href="{{ url('/inventario') }}">Cancelar</a>
             <a class="button is-warning" href="{{ url('producto/'. $producto->id. '/edit') }}">Editar</a>
 
             <form action="{{ url('/producto/'. $producto->id) }}" method="post">

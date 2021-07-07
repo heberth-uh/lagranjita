@@ -113,10 +113,10 @@ class ProductoController extends Controller
     public function destroy($id)
     {
         $producto = Producto::findOrFail($id);
-        if (Storage::delete('public/'. $producto->imagen)) {
-            Producto::destroy($id);
-        }
+        // if (Storage::delete('public/'. $producto->imagen)) {
+        // }
+        Producto::destroy($id);
 
-        return redirect('producto')->with('mensaje','Se ha eliminado un producto del inventario');
+        return redirect('inventario')->with('mensaje','Se ha eliminado un producto del inventario');
     }
 }

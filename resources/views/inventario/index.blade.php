@@ -8,17 +8,17 @@
 </div>
 
 @if(Session::has('mensaje'))
-    <div class="notification is-info">
-        <button class="delete"></button>
-            {{ Session::get('mensaje')}}
-    </div>
+<div class="notification is-info">
+    <button class="delete"></button>
+    {{ Session::get('mensaje')}}
+</div>
 @endif
 
 <section class="">
-    <div class="columns is-multiline m-0 is-2">
+    <div class="columns is-multiline is-2">
 
-        
-        <div class="column is-4-desktop is-6-tablet">
+
+        <div class="column is-full-desktop is-6-tablet">
             <table class="table">
                 <thead>
                     <tr>
@@ -36,42 +36,45 @@
                 <tbody>
                     @foreach ( $productos as $producto )
                     <tr>
-                        <th>{{ $producto->id }}</th>
-                        <th>{{ $producto->nombre }}</th>
-                        <th>{{ $producto->categoria }}</th>
-                        <th>{{ $producto->precioSaco }}</th>
-                        <th>{{ $producto->precioKg }}</th>
-                        <th>{{ $producto->totalSacos }}</th> 
-                        <th>{{ $producto->totalSacos }}</th>
-                        <th>{{ $producto->totalSacos }}</th>
+                        <th><p class="subtitle is-size-6">{{ $producto->id }}</p></th>
+                        <th><p class="subtitle is-size-6">{{ $producto->nombre }}</p></th>
+                        <th><p class="subtitle is-size-6">{{ $producto->categoria }}</p></th>
+                        <th><p class="subtitle is-size-6">{{ $producto->precioSaco }}</p></th>
+                        <th><p class="subtitle is-size-6">{{ $producto->precioKg }}</p></th>
+                        <th><p class="subtitle is-size-6">{{ $producto->totalSacos }}</p></th>
+                        <th><p class="subtitle is-size-6">{{ $producto->totalSacos }}</p></th>
+                        <th><p class="subtitle is-size-6">{{ $producto->totalSacos }}</p></th>
                         <th>
-                        <div class="buttons ">
-                <div class="buttons is-flex is-justify-content-end is-justify-content-right">
-                <a class="button is-primary" href="{{url('/producto/'.$producto->id ) }}">Detalles</a>
-                    <a class="button is-warning" href="{{ url('producto/'. $producto->id. '/edit') }}">Editar</a>
+                            <div class="buttons is-flex is-justify-content-space-between	">
+                                <div class="buttons is-flex is-justify-content-end is-justify-content-right">
+                                    <a class="button is-primary is-small"
+                                        href="{{url('/producto/'.$producto->id ) }}">Detalles</a>
+                                    <a class="button is-warning is-small"
+                                        href="{{ url('producto/'. $producto->id. '/edit') }}">Editar</a>
 
-                    <form action="{{ url('/producto/'. $producto->id) }}" method="post">
-                        @csrf
-                        {{ method_field('DELETE') }}
-                        <input type="submit" class="button is-danger"
-                            onclick="return confirm('¿Realmente desea borrar este producto?')" value="Eliminar">
-            </form>
+                                    <form action="{{ url('/producto/'. $producto->id) }}" method="post">
+                                        @csrf
+                                        {{ method_field('DELETE') }}
+                                        <input type="submit" class="button is-danger is-small"
+                                            onclick="return confirm('¿Realmente desea borrar este producto?')"
+                                            value="Eliminar">
+                                    </form>
 
-        </div>
-    </div>
-                        </th>    
-                    
-                    
+                                </div>
+                            </div>
+                        </th>
+
+
                     </tr>
                     @endforeach
                 </tbody>
-            
-            
+
+
             </table>
-            
+
 
         </div>
-        
+
 
     </div>
 

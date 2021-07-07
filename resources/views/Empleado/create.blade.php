@@ -2,8 +2,8 @@
 @section('content')
     <div class="container m-6">
         <h1 class="title has-text-info">Agregar un nuevo empleado</h1>
-        <div class="box">
-            <form action="{{ url('/empleado') }}" method="post" enctype="multipart/form-data">
+        <form action="{{ url('/empleado') }}" method="post" enctype="multipart/form-data">
+            <div class="box">
                 @csrf
                 <div class="field">
                     <label class="label">Nombre:</label>
@@ -63,15 +63,17 @@
                     </div>
                 </div>
                 
-                <div class="field is-grouped">
+
+            </div>
+            <div class="field is-grouped is-flex is-justify-content-flex-end	">
                     <div class="control">
-                        <button class="button is-link">Guardar</button>
+                        <a href="{{ url('/empleado') }}" class="button is-info is-outlined">Cancelar</a>
                     </div>
+
                     <div class="control">
-                        <button class="button is-link is-light">Cancelar</button>
+                        <button class="button is-info">Guardar</button>
                     </div>
                 </div>
-            </form>
-        </div>
+        </form>
     </div>
 @endsection

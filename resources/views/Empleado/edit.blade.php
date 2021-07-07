@@ -4,13 +4,13 @@
 <div class="contianer">
     <h1 class="title has-text-info">Editar "{{ $empleado->Nombre}}"</h1>
     @if (isset($mensaje))
-        <div class="notification is-info">
-            <button class="delete"></button>
-            {{ $mensaje }}
-        </div>
+    <div class="notification is-info">
+        <button class="delete"></button>
+        {{ $mensaje }}
+    </div>
     @endif
-    <div class="box">
-        <form action="{{ url('/empleado/'.$empleado->id) }}" method="post" enctype="multipart/form-data">
+    <form action="{{ url('/empleado/'.$empleado->id) }}" method="post" enctype="multipart/form-data">
+        <div class="box">
             @csrf
             {{ method_field('PATCH') }}
             <div class="field">
@@ -49,17 +49,18 @@
                 </div>
             </div>
             <div class="field">
-                <label class="label">Marca</label>
+                <label class="label">Turno</label>
                 <div class="control">
                     <div class="select">
                         <select class="form-control" name="turno">
-                            <option value="Matutino" {{ $empleado->Turno == "Matutino" ? "selected" : "" }}>Matutino</option>
-                            <option value="Vespertino" {{ $empleado->Turno == "Vespertino" ? "selected" : "" }}>Vespertino</option>
+                            <option value="Matutino" {{ $empleado->Turno == "Matutino" ? "selected" : "" }}>Matutino
+                            </option>
+                            <option value="Vespertino" {{ $empleado->Turno == "Vespertino" ? "selected" : "" }}>
+                                Vespertino</option>
                         </select>
                     </div>
                 </div>
             </div>
-
 
             <div class="field">
                 <label class="label">Imagen del producto (opcional)</label>
@@ -75,23 +76,28 @@
                                 Choose a file…
                         </span>
                         <span class="file-name">
-                            {{ $empleado->Imagen }} 
-                            <img  class="is-rounded" src="{{asset('storage').'/'. $empleado->Imagen}}" alt="Ilustración del empleado">  
+                            {{ $empleado->Imagen }}
+                            <img class="is-rounded" src="{{asset('storage').'/'. $empleado->Imagen}}"
+                                alt="Ilustración del empleado">
                         </span>
                         </span>
                     </label>
                 </div>
             </div>
 
-            <div class="field is-grouped">
-                <div class="control">
-                    <button class="button is-link">Guardar</button>
-                </div>
-                <div class="control">
-                    <button class="button is-link is-light">Cancelar</button>
-                </div>
+
+        </div>
+
+        <div class="field is-grouped is-flex is-justify-content-flex-end">
+            <div class="control">
+                <a href="{{ url('/empleado') }}" class="button is-info is-outlined">Cancelar</a>
             </div>
-        </form>
-    </div>
+
+            <div class="control">
+                <button class="button is-info">Guardar</button>
+            </div>
+        </div>
+    </form>
+
 </div>
 @endsection

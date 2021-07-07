@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+    <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation" style="box-shadow: 0 10px grey;">
         <div class="container is-fullwidth">
             <div class="navbar-brand">
                 <a class="navbar-item" href="{{url('/producto/')}}">

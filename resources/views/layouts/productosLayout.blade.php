@@ -77,6 +77,8 @@
             </div>
         </div>
     </nav>
+    
+
     <div class="container is-fullhd my-6">
         <div class="columns">
             <div class="column is-2-desktop is-hidden-tablet-only has-background-white ">
